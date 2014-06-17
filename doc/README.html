@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title>complexpack user manual</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id$
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="complexpack-user-manual">
+<h1 class="title">complexpack user manual</h1>
+
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><strong>Title</strong></td>
+<td>complexpack (VHDL complex arithmetic package).</td>
+</tr>
+<tr><td><strong>Author</strong></td>
+<td>Nikolaos Kavvadias 2009, 2010, 2011, 2012, 2013, 2014</td>
+</tr>
+<tr><td><strong>Contact</strong></td>
+<td><a class="reference external" href="mailto:nikos&#64;nkavvadias.com">nikos&#64;nkavvadias.com</a></td>
+</tr>
+<tr><td><strong>Website</strong></td>
+<td><a class="reference external" href="http://www.nkavvadias.com">http://www.nkavvadias.com</a></td>
+</tr>
+<tr><td><strong>Release Date</strong></td>
+<td>17 June 2014</td>
+</tr>
+<tr><td><strong>Version</strong></td>
+<td>0.1.2</td>
+</tr>
+<tr><td><strong>Rev. history</strong></td>
+<td>&nbsp;</td>
+</tr>
+<tr><td><strong>v0.0.0</strong></td>
+<td><p class="first">2009-10-02</p>
+<p class="last">First public release.</p>
+</td>
+</tr>
+<tr><td><strong>v0.0.1</strong></td>
+<td><p class="first">2014-02-24</p>
+<p class="last">Changed documentation format to RestructuredText.
+Code has been reorganized into new directory structure.</p>
+</td>
+</tr>
+<tr><td><strong>v0.1.0</strong></td>
+<td><p class="first">2014-03-03</p>
+<p class="last">Added get_real, get_imaginary, magnitude, and operators:
+lt, gt, le, ge, eq, ne. New library dependency:
+IEEE.math_real.</p>
+</td>
+</tr>
+<tr><td><strong>v0.1.1</strong></td>
+<td><p class="first">2014-03-04</p>
+<p class="last">Added support for the &quot;abs&quot; and the negation (&quot;-&quot;)
+operators as those are needed by the complexarrpack
+package project.</p>
+</td>
+</tr>
+<tr><td><strong>v0.1.2</strong></td>
+<td><p class="first">2014-06-17</p>
+<p class="last">Changed README to README.rst.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="introduction">
+<h1>1. Introduction</h1>
+<p><tt class="docutils literal">complexpack</tt> is a simple complex arithmetic package written in VHDL. It is
+based ona code example present in the RASSP series of VHDL lectures. Compared to
+the RASSP version, the following have beed added:</p>
+<ul class="simple">
+<li>conjugate function.</li>
+<li>magnitude function.</li>
+<li>comparison operators.</li>
+<li>get real and get imaginary part functions.</li>
+</ul>
+<p>A complex number is defined by the pair (real-part, imaginary-part) where both
+items of the pair are numbers. A common algebraic representation for complex
+numbers is:</p>
+<div class="line-block">
+<div class="line"><tt class="docutils literal">z = a + i*b,</tt></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><tt class="docutils literal">z</tt> is the resulting complex number</li>
+<li><tt class="docutils literal">a</tt> is the real part of the number also written as <tt class="docutils literal">a = Re(z)</tt></li>
+<li><tt class="docutils literal">b</tt> is the imaginary part of the number also written as <tt class="docutils literal">b = Im(z)</tt></li>
+<li><tt class="docutils literal">i</tt> is the imaginary unit and has the value of <tt class="docutils literal"><span class="pre">sqrt(-1)</span></tt>.</li>
+</ul>
+<p>Currently, the <tt class="docutils literal">complexpack</tt> package implements the following:</p>
+<ul class="simple">
+<li>the constants re and im, which specify addresses for an array-based
+representation of a complex number</li>
+<li>type definition for a complex number</li>
+<li>interface and implementation for complex arithmetic functionality</li>
+</ul>
+<div class="section" id="implemented-functions-and-operators">
+<h2>1.1. Implemented functions and operators</h2>
+<p>This is a summary of the currently supported functions, procedures and operators
+by the <tt class="docutils literal">complexpack</tt> package.</p>
+<ul class="simple">
+<li><tt class="docutils literal">to_complex(real, real)</tt>: form a complex number</li>
+<li><tt class="docutils literal">+</tt>: add two complex numbers</li>
+<li><tt class="docutils literal">-</tt>: subtract one complex number from another</li>
+<li><tt class="docutils literal">-</tt>: negate a complex number</li>
+<li><tt class="docutils literal">*</tt>: multiply two complex numbers</li>
+<li><tt class="docutils literal">/</tt>: divide two complex numbers</li>
+<li><tt class="docutils literal">conjugate(complex)</tt>: return the conjugate of the given complex
+number</li>
+</ul>
+<p>All functions above return an item of the complex data type.</p>
+<ul class="simple">
+<li><tt class="docutils literal">get_real(complex)</tt>: get the real part of a complex number</li>
+<li><tt class="docutils literal">get_imaginary(complex)</tt>: get the imaginary part of a complex number</li>
+<li><tt class="docutils literal">magnitude(complex)</tt>: return the magnitude (distance of point 0,0) of
+the complex number</li>
+<li><tt class="docutils literal">abs(complex)</tt>: alias for <tt class="docutils literal">magnitude</tt></li>
+</ul>
+<p>All functions above return an item of the real data type (a scalar quantity).</p>
+<ul class="simple">
+<li><tt class="docutils literal">&lt;</tt>: less than comparison for two complex numbers</li>
+<li><tt class="docutils literal">&gt;</tt>: greater than comparison for two complex numbers</li>
+<li><tt class="docutils literal">&lt;=</tt>: less than or equal comparison for two complex numbers</li>
+<li><tt class="docutils literal">&gt;=</tt>: greater than or equal comparison for two complex numbers</li>
+<li><tt class="docutils literal">=</tt>: equality comparison for two complex numbers</li>
+<li><tt class="docutils literal">/=</tt>: non-equality comparison for two complex numbers</li>
+</ul>
+<p>All functions above return an item of the boolean data type (TRUE or FALSE).</p>
+<p>The definition of <tt class="docutils literal">magnitude</tt> requires a square root computation. For this
+task, a call to the <tt class="docutils literal">sqrt</tt> function found in the <tt class="docutils literal">IEEE.math_real</tt> library
+is used.</p>
+<p><tt class="docutils literal">complexpack</tt> is distributed along with a simple VHDL testbench exercising
+basic functionalities.</p>
+</div>
+</div>
+<div class="section" id="file-listing">
+<h1>2. File listing</h1>
+<p>The <tt class="docutils literal">complexpack</tt> distribution includes the following files:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>/complexpack</td>
+<td>Top-level directory</td>
+</tr>
+<tr><td>/bench/vhdl</td>
+<td>Benchmarks VHDL directory</td>
+</tr>
+<tr><td>complexpack_tb.vhd</td>
+<td>A simple testbench.</td>
+</tr>
+<tr><td>/doc</td>
+<td>Documentation directory</td>
+</tr>
+<tr><td>AUTHORS</td>
+<td>List of <tt class="docutils literal">complexpack</tt> authors.</td>
+</tr>
+<tr><td>BUGS</td>
+<td>Bug list.</td>
+</tr>
+<tr><td>ChangeLog</td>
+<td>A log for code changes.</td>
+</tr>
+<tr><td>LICENSE</td>
+<td>The LGPL, version 3, governs <tt class="docutils literal">complexpack</tt>.</td>
+</tr>
+<tr><td>README.rst.</td>
+<td>This file.</td>
+</tr>
+<tr><td>README.html</td>
+<td>HTML version of README.rst.</td>
+</tr>
+<tr><td>README.pdf</td>
+<td>PDF version of README.rst.</td>
+</tr>
+<tr><td>rst2docs.sh</td>
+<td>Bash script for generating the HTML and PDF versions.</td>
+</tr>
+<tr><td>THANKS</td>
+<td>Acknowledgements.</td>
+</tr>
+<tr><td>TODO</td>
+<td>A list of future enhancements.</td>
+</tr>
+<tr><td>VERSION</td>
+<td>Current version of the project sources.</td>
+</tr>
+<tr><td>/rtl/vhdl</td>
+<td>RTL source code directory for the package</td>
+</tr>
+<tr><td>complexpack.vhd</td>
+<td>The complex arithmetic package.</td>
+</tr>
+<tr><td>/sim/rtl_sim</td>
+<td>RTL simulation files directory</td>
+</tr>
+<tr><td>/sim/rtl_sim/out</td>
+<td>RTL simulation output files directory</td>
+</tr>
+<tr><td>complexpack_results-
+.txt</td>
+<td>Output generated by the <tt class="docutils literal">complexpack_tb.vhd</tt> test.</td>
+</tr>
+<tr><td>/sim/rtl_sim/run</td>
+<td>RTL simulation run scripts directory</td>
+</tr>
+<tr><td>complexpack.mk</td>
+<td>GNU Makefile for running GHDL simulations.</td>
+</tr>
+<tr><td>run.sh</td>
+<td>A bash script for running the GNU Makefile for GHDL.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="complexpack-usage">
+<h1>3. <tt class="docutils literal">complexpack</tt> usage</h1>
+<p>The <tt class="docutils literal">complexpack</tt> package test script can be used as follows:</p>
+<div class="line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">$./run.sh</span></tt></div>
+</div>
+<p>as run from within the <tt class="docutils literal">./sim/rtl_sim/run</tt> subdirectory.</p>
+<p>After this process, the <tt class="docutils literal">complexpack_results.txt</tt> file is generated containing
+simulation results.</p>
+</div>
+<div class="section" id="prerequisities">
+<h1>4. Prerequisities</h1>
+<ul>
+<li><p class="first">Standard UNIX-based tools (tested on cygwin/x86 and MinGW/x86 and MinGW/x64)</p>
+<ul class="simple">
+<li>make</li>
+<li>bash</li>
+</ul>
+</li>
+<li><p class="first">GHDL simulator (<a class="reference external" href="http://ghdl.free.fr">http://ghdl.free.fr</a>)</p>
+<p>Provides the &quot;ghdl&quot; executable and corresponding simulation environment.
+Versions throughtout 0.26 to 0.31 (mcode) have been used for testing.</p>
+</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
