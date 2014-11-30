@@ -2,6 +2,10 @@
  complexpack user manual
 =========================
 
+.. image:: complexpack.png
+   :scale: 25 %
+   :align: center 
+
 +-------------------+----------------------------------------------------------+
 | **Title**         | complexpack (VHDL complex arithmetic package).           |
 +-------------------+----------------------------------------------------------+
@@ -11,26 +15,19 @@
 +-------------------+----------------------------------------------------------+
 | **Website**       | http://www.nkavvadias.com                                |
 +-------------------+----------------------------------------------------------+
-| **Release Date**  | 17 June 2014                                             |
+| **Release Date**  | 30 November 2014                                         |
 +-------------------+----------------------------------------------------------+
-| **Version**       | 0.1.2                                                    |
+| **Version**       | 0.1.3                                                    |
 +-------------------+----------------------------------------------------------+
 | **Rev. history**  |                                                          |
 +-------------------+----------------------------------------------------------+
-|        **v0.0.0** | 2009-10-02                                               |
+|        **v0.1.3** | 2014-11-30                                               |
 |                   |                                                          |
-|                   | First public release.                                    |
+|                   | Added project logo to README.                            |
 +-------------------+----------------------------------------------------------+
-|        **v0.0.1** | 2014-02-24                                               |
+|        **v0.1.2** | 2014-06-17                                               |
 |                   |                                                          |
-|                   | Changed documentation format to RestructuredText.        |
-|                   | Code has been reorganized into new directory structure.  |
-+-------------------+----------------------------------------------------------+
-|        **v0.1.0** | 2014-03-03                                               |
-|                   |                                                          |
-|                   | Added get_real, get_imaginary, magnitude, and operators: |
-|                   | lt, gt, le, ge, eq, ne. New library dependency:          |
-|                   | IEEE.math_real.                                          |
+|                   | Changed README to README.rst.                            |
 +-------------------+----------------------------------------------------------+
 |        **v0.1.1** | 2014-03-04                                               |
 |                   |                                                          |
@@ -38,9 +35,20 @@
 |                   | operators as those are needed by the complexarrpack      |
 |                   | package project.                                         |
 +-------------------+----------------------------------------------------------+
-|        **v0.1.2** | 2014-06-17                                               |
+|        **v0.1.0** | 2014-03-03                                               |
 |                   |                                                          |
-|                   | Changed README to README.rst.                            |
+|                   | Added get_real, get_imaginary, magnitude, and operators: |
+|                   | lt, gt, le, ge, eq, ne. New library dependency:          |
+|                   | IEEE.math_real.                                          |
++-------------------+----------------------------------------------------------+
+|        **v0.0.1** | 2014-02-24                                               |
+|                   |                                                          |
+|                   | Changed documentation format to RestructuredText.        |
+|                   | Code has been reorganized into new directory structure.  |
++-------------------+----------------------------------------------------------+
+|        **v0.0.0** | 2009-10-02                                               |
+|                   |                                                          |
+|                   | First public release.                                    |
 +-------------------+----------------------------------------------------------+
 
 
@@ -128,12 +136,6 @@ The ``complexpack`` distribution includes the following files:
 +-----------------------+------------------------------------------------------+
 | /complexpack          | Top-level directory                                  |
 +-----------------------+------------------------------------------------------+
-| /bench/vhdl           | Benchmarks VHDL directory                            |
-+-----------------------+------------------------------------------------------+
-| complexpack_tb.vhd    | A simple testbench.                                  |
-+-----------------------+------------------------------------------------------+
-| /doc                  | Documentation directory                              |
-+-----------------------+------------------------------------------------------+
 | AUTHORS               | List of ``complexpack`` authors.                     |
 +-----------------------+------------------------------------------------------+
 | BUGS                  | Bug list.                                            |
@@ -142,19 +144,27 @@ The ``complexpack`` distribution includes the following files:
 +-----------------------+------------------------------------------------------+
 | LICENSE               | The LGPL, version 3, governs ``complexpack``.        |
 +-----------------------+------------------------------------------------------+
-| README.rst.           | This file.                                           |
+| README.rst            | This file.                                           |
 +-----------------------+------------------------------------------------------+
 | README.html           | HTML version of README.rst.                          |
 +-----------------------+------------------------------------------------------+
 | README.pdf            | PDF version of README.rst.                           |
-+-----------------------+------------------------------------------------------+
-| rst2docs.sh           | Bash script for generating the HTML and PDF versions.|
 +-----------------------+------------------------------------------------------+
 | THANKS                | Acknowledgements.                                    |
 +-----------------------+------------------------------------------------------+
 | TODO                  | A list of future enhancements.                       |
 +-----------------------+------------------------------------------------------+
 | VERSION               | Current version of the project sources.              |
++-----------------------+------------------------------------------------------+
+| complexpack.png       | PNG image for the ``complexpack`` project logo.      |
++-----------------------+------------------------------------------------------+
+| rst2docs.sh           | Bash script for generating the HTML and PDF versions.|
++-----------------------+------------------------------------------------------+
+| /bench/vhdl           | Benchmarks VHDL directory                            |
++-----------------------+------------------------------------------------------+
+| complexpack_tb.vhd    | A simple testbench.                                  |
++-----------------------+------------------------------------------------------+
+| /doc                  | Documentation directory                              |
 +-----------------------+------------------------------------------------------+
 | /rtl/vhdl             | RTL source code directory for the package            |
 +-----------------------+------------------------------------------------------+
@@ -188,8 +198,8 @@ After this process, the ``complexpack_results.txt`` file is generated containing
 simulation results.
 
 
-4. Prerequisities
-=================
+4. Prerequisites
+================
 
 - Standard UNIX-based tools (tested on cygwin/x86 and MinGW/x86 and MinGW/x64)
 
