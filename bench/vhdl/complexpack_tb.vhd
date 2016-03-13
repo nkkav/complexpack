@@ -1,7 +1,8 @@
 --------------------------------------------------------------------------------
 -- Filename: complexpack_tb.vhd
 -- Purpose : Testbench for the complex arithmetic package
--- Author  : Nikolaos Kavvadias (C) 2009, 2010, 2011, 2012, 2013, 2014
+-- Author  : Nikolaos Kavvadias (C) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 
+--                                  2016
 -- Date    : 03-Mar-2014
 -- Revision: 0.0.0 (02/10/09)
 --           Initial version.

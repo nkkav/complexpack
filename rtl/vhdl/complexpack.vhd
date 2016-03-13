@@ -1,7 +1,8 @@
 --------------------------------------------------------------------------------
 -- Filename: complexpack.vhd
 -- Purpose : Complex arithmetic package
--- Author  : Nikolaos Kavvadias (C) 2009, 2010, 2011, 2012, 2013, 2014
+-- Author  : Nikolaos Kavvadias (C) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 
+--                                  2016
 -- Date    : 04-Mar-2014
 -- Revision: 0.0.0 (02/10/09)
 --           Initial version. Based a code example present in the RASSP series 
