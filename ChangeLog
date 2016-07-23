@@ -1,5 +1,9 @@
 ChangeLog starts here
 
+2016-07-23 Nikolaos Kavvadias  <nikos@nkavvadias.com>
+
+  * Release v0.1.5. Use sim/rtl_sim/bin dir, ignores for git, clean script.
+
 2016-03-13  Nikolaos Kavvadias  <nikos@nkavvadias.com>
 
   * Release v0.1.4 with date updates.

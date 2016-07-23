@@ -362,13 +362,18 @@ ul.auto-toc {
 <td><a class="reference external" href="http://www.nkavvadias.com">http://www.nkavvadias.com</a></td>
 </tr>
 <tr><td><strong>Release Date</strong></td>
-<td>13 March 2016</td>
+<td>23 July 2016</td>
 </tr>
 <tr><td><strong>Version</strong></td>
-<td>0.1.4</td>
+<td>0.1.5</td>
 </tr>
 <tr><td><strong>Rev. history</strong></td>
 <td>&nbsp;</td>
+</tr>
+<tr><td><strong>v0.1.5</strong></td>
+<td><p class="first">2016-23-07</p>
+<p class="last">Use sim/rtl_sim/bin dir, ignores for git, clean script</p>
+</td>
 </tr>
 <tr><td><strong>v0.1.4</strong></td>
 <td><p class="first">2016-03-13</p>
@@ -548,6 +553,12 @@ basic functionalities.</p>
 <tr><td>/sim/rtl_sim</td>
 <td>RTL simulation files directory</td>
 </tr>
+<tr><td>/sim/rtl_sim/bin</td>
+<td>RTL simulation run scripts directory</td>
+</tr>
+<tr><td>complexpack.mk</td>
+<td>GNU Makefile for running GHDL simulations.</td>
+</tr>
 <tr><td>/sim/rtl_sim/out</td>
 <td>RTL simulation output files directory</td>
 </tr>
@@ -558,8 +569,8 @@ basic functionalities.</p>
 <tr><td>/sim/rtl_sim/run</td>
 <td>RTL simulation run scripts directory</td>
 </tr>
-<tr><td>complexpack.mk</td>
-<td>GNU Makefile for running GHDL simulations.</td>
+<tr><td>clean.sh</td>
+<td>A bash script for cleaning simulation artifacts.</td>
 </tr>
 <tr><td>run.sh</td>
 <td>A bash script for running the GNU Makefile for GHDL.</td>
@@ -571,11 +582,19 @@ basic functionalities.</p>
 <h1>3. <tt class="docutils literal">complexpack</tt> usage</h1>
 <p>The <tt class="docutils literal">complexpack</tt> package test script can be used as follows:</p>
 <div class="line-block">
-<div class="line"><tt class="docutils literal"><span class="pre">$./run.sh</span></tt></div>
+<div class="line"><tt class="docutils literal">$ ./run.sh</tt></div>
 </div>
-<p>as run from within the <tt class="docutils literal">./sim/rtl_sim/run</tt> subdirectory.</p>
+<p>as run from within the <tt class="docutils literal">./sim/rtl_sim/run</tt> subdirectory. The run script
+expects that the GHDL simulator is installed and its <tt class="docutils literal">bin</tt> directory is in the
+<tt class="docutils literal">$PATH</tt>.</p>
 <p>After this process, the <tt class="docutils literal">complexpack_results.txt</tt> file is generated containing
 simulation results.</p>
+<p>A reference <tt class="docutils literal">complexpack_results.txt</tt> is kept under <tt class="docutils literal">./sim/rtl_sim/out</tt> for
+comparison.</p>
+<p>To clean up afterwards, use:</p>
+<div class="line-block">
+<div class="line"><tt class="docutils literal">$ ./clean.sh</tt></div>
+</div>
 </div>
 <div class="section" id="prerequisites">
 <h1>4. Prerequisites</h1>
@@ -588,7 +607,7 @@ simulation results.</p>
 </li>
 <li><p class="first">GHDL simulator (<a class="reference external" href="http://ghdl.free.fr">http://ghdl.free.fr</a>)</p>
 <p>Provides the &quot;ghdl&quot; executable and corresponding simulation environment.
-Versions throughtout 0.26 to 0.31 (mcode) have been used for testing.</p>
+Versions throughtout 0.26 to 0.33 have been used for testing.</p>
 </li>
 </ul>
 </div>

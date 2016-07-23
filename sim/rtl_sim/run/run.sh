@@ -1,8 +1,8 @@
 #!/bin/bash
 
-make -f complexpack.mk clean
-make -f complexpack.mk init
-make -f complexpack.mk run
+make -f ../bin/complexpack.mk clean
+make -f ../bin/complexpack.mk init
+make -f ../bin/complexpack.mk run
 
 if [ "$SECONDS" -eq 1 ]
 then
