@@ -181,7 +181,7 @@ The ``complexpack`` distribution includes the following files:
 +-----------------------+------------------------------------------------------+
 | /sim/rtl_sim          | RTL simulation files directory                       |
 +-----------------------+------------------------------------------------------+
-| /sim/rtl_sim/bin      | RTL simulation run scripts directory                 |
+| /sim/rtl_sim/bin      | RTL simulation makefiles directory                   |
 +-----------------------+------------------------------------------------------+
 | complexpack.mk        | GNU Makefile for running GHDL simulations.           |
 +-----------------------+------------------------------------------------------+
