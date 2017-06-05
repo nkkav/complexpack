@@ -39,6 +39,16 @@ package complexpack is
   
   -- Type definition for a complex number
   type complex is array (natural range re to im) of real;
+
+  -- A complex number in polar form is defined by the pair (radius, angle) 
+  -- where both items of the pair are numbers. Polar coordinates express a 
+  -- point as a distance (radius or rho) from the origin, followed by a 
+  -- rotation (angle equal to theta) around it.
+  constant rho   : integer := 0;
+  constant theta : integer := 1;
+  
+  -- Type definition for a complex number in polar form
+  type polar is array (natural range rho to theta) of real;
   
   -- Interface for complex arithmetic functionality
   function to_complex (a, b : real) return complex;
@@ -57,7 +67,10 @@ package complexpack is
   function "<=" (a, b : complex) return boolean;  
   function ">=" (a, b : complex) return boolean;  
   function "="  (a, b : complex) return boolean;  
-  function "/=" (a, b : complex) return boolean;  
+  function "/=" (a, b : complex) return boolean;
+
+  function to_polar(a : complex) return polar;
+  function to_cartesian(a : polar) return complex;
 
 end complexpack;
 
@@ -192,6 +205,22 @@ package body complexpack is
   begin
     t := (magnitude(a) /= magnitude(b));
     return t;
-  end "/=";  
-  
+  end "/=";
+
+  function to_polar(a : complex) return polar is
+    variable t : polar;
+  begin
+    t(rho)   := magnitude(a);
+    t(theta) := arctan(a(im), a(re));
+    return t;
+  end to_polar;
+
+  function to_cartesian(a : polar) return complex is
+    variable t : complex;
+  begin
+    t(re) := a(rho) * cos(a(theta));
+    t(im) := a(rho) * sin(a(theta));
+    return t;
+  end to_cartesian;
+
 end complexpack;
