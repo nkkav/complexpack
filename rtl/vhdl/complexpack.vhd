@@ -76,6 +76,7 @@ package complexpack is
 
   function exp (a : complex) return complex;
   function log (a : complex) return complex;
+  function pow (a, b : complex) return complex;
   function sqrt (a : complex) return complex;
   function sin (a : complex) return complex;
   function cos (a : complex) return complex;
@@ -247,6 +248,16 @@ package body complexpack is
     t(im) := imag_part;
     return t;
   end log;
+
+  function pow (a, b : complex) return complex is
+    variable t : complex;
+    variable logv, u : complex;
+  begin
+     logv := log(a);
+     u := logv * b;
+     t := exp(u);
+     return t;
+  end pow;
   
   function sqrt(a : complex) return complex is
     variable t : complex;
