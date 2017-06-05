@@ -2,8 +2,8 @@
 -- Filename: complexpack.vhd
 -- Purpose : Complex arithmetic package
 -- Author  : Nikolaos Kavvadias (C) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 
---                                  2016
--- Date    : 04-Mar-2014
+--                                  2016, 2017
+-- Date    : 05-Jun-2017
 -- Revision: 0.0.0 (02/10/09)
 --           Initial version. Based a code example present in the RASSP series 
 --           of VHDL lectures. Compared to the RASSP version, the following have 
@@ -15,6 +15,8 @@
 --           0.1.1 (04/03/14)
 --           Added support for the "abs" and the negation ("-") operators as 
 --           those are needed by the complexarrpack package project.
+--           0.2.0 (05/06/17)
+--           Add polar form, to_polar, to_cartesian.
 --
 --------------------------------------------------------------------------------
 
