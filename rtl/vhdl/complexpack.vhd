@@ -75,6 +75,7 @@ package complexpack is
 
   function exp (a : complex) return complex;
   function log (a : complex) return complex;
+  function sqrt (a : complex) return complex;
 
   function to_polar(a : complex) return polar;
   function to_cartesian(a : polar) return complex;
@@ -238,6 +239,23 @@ package body complexpack is
     t(im) := imag_part;
     return t;
   end log;
+  
+  function sqrt(a : complex) return complex is
+    variable t : complex;
+    variable mag : real;
+    variable real_part : real;
+    variable imag_part : real;    
+  begin
+    mag := magnitude(a);
+    real_part := sqrt(0.5 * (mag + a(re)));
+    imag_part := sqrt(0.5 * (mag - a(re)));
+    if (a(im) < 0.0) then
+      imag_part := -imag_part;
+    end if;
+    t(re) := real_part;
+    t(im) := imag_part;
+    return t;
+  end sqrt;
 
   function to_polar(a : complex) return polar is
     variable t : polar;
