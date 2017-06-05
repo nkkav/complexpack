@@ -17,7 +17,7 @@
 --           those are needed by the complexarrpack package project.
 --           0.2.0 (05/06/17)
 --           Add polar form, to_polar, to_cartesian, exp, log, sqrt, sin, 
---           cos, tan.
+--           cos, tan, arcsin, arccos, arctan.
 --           Additions based on C implementations from "Basic Algorithms" of 
 --           Malcolm McLean.
 --
@@ -80,6 +80,10 @@ package complexpack is
   function sin (a : complex) return complex;
   function cos (a : complex) return complex;
   function tan (a : complex) return complex;
+
+  function arcsin (a : complex) return complex;  
+  function arccos (a : complex) return complex;
+  function arctan (a : complex) return complex;
 
   function to_polar(a : complex) return polar;
   function to_cartesian(a : polar) return complex;
@@ -287,6 +291,47 @@ package body complexpack is
     t := u / v;
     return t;
   end tan;
+
+  function arcsin(a : complex) return complex is
+    variable t : complex;
+    variable u, v, uplusv, uminusv : real;
+  begin
+    u := 0.5 * sqrt((a(re) + 1.0) * (a(re) + 1.0) + a(im) * a(im));
+    v := 0.5 * sqrt((a(re) - 1.0) * (a(re) - 1.0) + a(im) * a(im));
+    uplusv := u + v;
+    uminusv := u - v;
+    t(re) := arcsin(uminusv);
+    t(im) := log(uplusv + sqrt(uplusv * uplusv - 1.0));
+    return t;
+  end arcsin;
+
+  function arccos(a : complex) return complex is
+    variable t : complex;
+    variable n, u, v, uminusv : real;
+  begin
+    n := magnitude(a);
+    u := 0.5 * sqrt(1.0 + n + 2.0 * a(re));
+    v := 0.5 * sqrt(1.0 + n - 2.0 * a(re));
+    uminusv := u - v;
+    u := u + v;
+    t(re) := arccos(uminusv);
+    t(im) := log(u + sqrt(u * u - 1.0));
+    return t;
+  end arccos;
+
+  function arctan (a : complex) return complex is
+    variable t : complex;
+    variable u, v, y : complex;
+  begin
+    u := to_complex(1.0 - a(im), a(re));
+    v := to_complex(1.0 + a(im), a(re));
+    u := v - u;
+    u(re) := u(re) / 2.0;
+    u(im) := u(im) / 2.0;
+    y := to_complex(0.0, -1.0);
+    t := y * u;
+    return t;
+  end arctan;
 
   function to_polar(a : complex) return polar is
     variable t : polar;
