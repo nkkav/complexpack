@@ -16,7 +16,8 @@
 --           Added support for the "abs" and the negation ("-") operators as 
 --           those are needed by the complexarrpack package project.
 --           0.2.0 (05/06/17)
---           Add polar form, to_polar, to_cartesian, exp, log.
+--           Add polar form, to_polar, to_cartesian, exp, log, sqrt, sin, 
+--           cos, tan.
 --           Additions based on C implementations from "Basic Algorithms" of 
 --           Malcolm McLean.
 --
@@ -76,6 +77,9 @@ package complexpack is
   function exp (a : complex) return complex;
   function log (a : complex) return complex;
   function sqrt (a : complex) return complex;
+  function sin (a : complex) return complex;
+  function cos (a : complex) return complex;
+  function tan (a : complex) return complex;
 
   function to_polar(a : complex) return polar;
   function to_cartesian(a : polar) return complex;
@@ -256,6 +260,33 @@ package body complexpack is
     t(im) := imag_part;
     return t;
   end sqrt;
+
+  function sin(a : complex) return complex is
+    variable t : complex;
+  begin
+    t(re) := sin(a(re)) * cosh(a(im));
+    t(im) := cos(a(re)) * sinh(a(im));
+    return t;
+  end sin;
+
+  function cos(a : complex) return complex is
+    variable t : complex;
+  begin
+    t(re) := cos(a(re)) * cosh(a(im));
+    t(im) := sin(a(re)) * sinh(a(im));
+    return t;
+  end cos;
+ 
+  function tan(a : complex) return complex is
+    variable t : complex;
+    variable u : complex;
+    variable v : complex;
+  begin
+    u := sin(a);
+    v := cos(a);
+    t := u / v;
+    return t;
+  end tan;
 
   function to_polar(a : complex) return polar is
     variable t : polar;
