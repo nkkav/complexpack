@@ -10,17 +10,22 @@
 | **Title**         | complexpack (VHDL complex arithmetic package).           |
 +-------------------+----------------------------------------------------------+
 | **Author**        | Nikolaos Kavvadias 2009, 2010, 2011, 2012, 2013, 2014,   |
-|                   | 2015, 2016                                               |
+|                   | 2015, 2016, 2017                                         |
 +-------------------+----------------------------------------------------------+
-| **Contact**       | nikos@nkavvadias.com                                     |
+| **Contact**       | nikolaos.kavvadias@gmail.com                             |
 +-------------------+----------------------------------------------------------+
 | **Website**       | http://www.nkavvadias.com                                |
 +-------------------+----------------------------------------------------------+
-| **Release Date**  | 23 July 2016                                             |
+| **Release Date**  | 05 June 2017                                             |
 +-------------------+----------------------------------------------------------+
-| **Version**       | 0.1.5                                                    |
+| **Version**       | 0.2.0                                                    |
 +-------------------+----------------------------------------------------------+
 | **Rev. history**  |                                                          |
++-------------------+----------------------------------------------------------+
+|        **v0.2.0** | 2017-06-05                                               |
+|                   |                                                          |
+|                   | Add polar form, to_polar, to_cartesian, exp, log, pow,   |
+|                   | sqrt, sin, cos, tan, arcsin, arccos, arctan.             |
 +-------------------+----------------------------------------------------------+
 |        **v0.1.5** | 2016-23-07                                               |
 |                   |                                                          |
@@ -109,7 +114,18 @@ by the ``complexpack`` package.
 * ``/``: divide two complex numbers
 * ``conjugate(complex)``: return the conjugate of the given complex 
   number
-	
+* ``exp``: return the complex exponent
+* ``log``: return the complex logarithm
+* ``pow``: return the complex power
+* ``sqrt``: return the complex square root
+* ``sin``: return the complex sine
+* ``cos``: return the complex cosine
+* ``tan``: return the complex tangent
+* ``arcsin``: return the complex arcsine
+* ``arccos``: return the complex arccosine
+* ``arctan``: return the complex arctangent
+* ``to_cartesian``: convert from polar form to Cartesian
+
 All functions above return an item of the complex data type.
 
 * ``get_real(complex)``: get the real part of a complex number
@@ -128,6 +144,10 @@ All functions above return an item of the real data type (a scalar quantity).
 * ``/=``: non-equality comparison for two complex numbers
 
 All functions above return an item of the boolean data type (TRUE or FALSE).
+
+* ``to_polar``: convert the complex (Cartesian) to polar coordinates
+
+The function above returns a complex number in polar form.
 
 The definition of ``magnitude`` requires a square root computation. For this 
 task, a call to the ``sqrt`` function found in the ``IEEE.math_real`` library 

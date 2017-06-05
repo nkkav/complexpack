@@ -353,22 +353,28 @@ ul.auto-toc {
 </tr>
 <tr><td><strong>Author</strong></td>
 <td>Nikolaos Kavvadias 2009, 2010, 2011, 2012, 2013, 2014,
-2015, 2016</td>
+2015, 2016, 2017</td>
 </tr>
 <tr><td><strong>Contact</strong></td>
-<td><a class="reference external" href="mailto:nikos&#64;nkavvadias.com">nikos&#64;nkavvadias.com</a></td>
+<td><a class="reference external" href="mailto:nikolaos.kavvadias&#64;gmail.com">nikolaos.kavvadias&#64;gmail.com</a></td>
 </tr>
 <tr><td><strong>Website</strong></td>
 <td><a class="reference external" href="http://www.nkavvadias.com">http://www.nkavvadias.com</a></td>
 </tr>
 <tr><td><strong>Release Date</strong></td>
-<td>23 July 2016</td>
+<td>05 June 2017</td>
 </tr>
 <tr><td><strong>Version</strong></td>
-<td>0.1.5</td>
+<td>0.2.0</td>
 </tr>
 <tr><td><strong>Rev. history</strong></td>
 <td>&nbsp;</td>
+</tr>
+<tr><td><strong>v0.2.0</strong></td>
+<td><p class="first">2017-06-05</p>
+<p class="last">Add polar form, to_polar, to_cartesian, exp, log, pow,
+sqrt, sin, cos, tan, arcsin, arccos, arctan.</p>
+</td>
 </tr>
 <tr><td><strong>v0.1.5</strong></td>
 <td><p class="first">2016-23-07</p>
@@ -461,6 +467,17 @@ by the <tt class="docutils literal">complexpack</tt> package.</p>
 <li><tt class="docutils literal">/</tt>: divide two complex numbers</li>
 <li><tt class="docutils literal">conjugate(complex)</tt>: return the conjugate of the given complex
 number</li>
+<li><tt class="docutils literal">exp</tt>: return the complex exponent</li>
+<li><tt class="docutils literal">log</tt>: return the complex logarithm</li>
+<li><tt class="docutils literal">pow</tt>: return the complex power</li>
+<li><tt class="docutils literal">sqrt</tt>: return the complex square root</li>
+<li><tt class="docutils literal">sin</tt>: return the complex sine</li>
+<li><tt class="docutils literal">cos</tt>: return the complex cosine</li>
+<li><tt class="docutils literal">tan</tt>: return the complex tangent</li>
+<li><tt class="docutils literal">arcsin</tt>: return the complex arcsine</li>
+<li><tt class="docutils literal">arccos</tt>: return the complex arccosine</li>
+<li><tt class="docutils literal">arctan</tt>: return the complex arctangent</li>
+<li><tt class="docutils literal">to_cartesian</tt>: convert from polar form to Cartesian</li>
 </ul>
 <p>All functions above return an item of the complex data type.</p>
 <ul class="simple">
@@ -480,6 +497,10 @@ the complex number</li>
 <li><tt class="docutils literal">/=</tt>: non-equality comparison for two complex numbers</li>
 </ul>
 <p>All functions above return an item of the boolean data type (TRUE or FALSE).</p>
+<ul class="simple">
+<li><tt class="docutils literal">to_polar</tt>: convert the complex (Cartesian) to polar coordinates</li>
+</ul>
+<p>The function above returns a complex number in polar form.</p>
 <p>The definition of <tt class="docutils literal">magnitude</tt> requires a square root computation. For this
 task, a call to the <tt class="docutils literal">sqrt</tt> function found in the <tt class="docutils literal">IEEE.math_real</tt> library
 is used.</p>
