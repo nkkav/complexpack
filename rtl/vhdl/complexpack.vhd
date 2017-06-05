@@ -71,6 +71,8 @@ package complexpack is
   function "="  (a, b : complex) return boolean;  
   function "/=" (a, b : complex) return boolean;
 
+  function exp (a : complex) return complex;
+
   function to_polar(a : complex) return polar;
   function to_cartesian(a : polar) return complex;
 
@@ -208,6 +210,16 @@ package body complexpack is
     t := (magnitude(a) /= magnitude(b));
     return t;
   end "/=";
+
+  function exp (a : complex) return complex is
+    variable t : complex;
+    variable exponent : real;
+  begin
+    exponent := exp(a(re));
+    t(re) := exponent * cos(a(im));
+    t(im) := exponent * sin(a(im));
+    return t;
+  end exp;
 
   function to_polar(a : complex) return polar is
     variable t : polar;
