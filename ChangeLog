@@ -1,5 +1,10 @@
 ChangeLog starts here
 
+2017-06-05 Nikolaos Kavvadias  <nikolaos.kavvadias@gmail.com>
+  
+  * Release v0.2.0. Add polar form, to_polar, to_cartesian, exp, log, pow, 
+    sqrt, sin, cos, tan, arcsin, arccos, arctan.
+
 2016-07-23 Nikolaos Kavvadias  <nikos@nkavvadias.com>
 
   * Release v0.1.5. Use sim/rtl_sim/bin dir, ignores for git, clean script.

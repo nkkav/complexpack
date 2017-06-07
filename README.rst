@@ -114,17 +114,17 @@ by the ``complexpack`` package.
 * ``/``: divide two complex numbers
 * ``conjugate(complex)``: return the conjugate of the given complex 
   number
-* ``exp``: return the complex exponent
-* ``log``: return the complex logarithm
-* ``pow``: return the complex power
-* ``sqrt``: return the complex square root
-* ``sin``: return the complex sine
-* ``cos``: return the complex cosine
-* ``tan``: return the complex tangent
-* ``arcsin``: return the complex arcsine
-* ``arccos``: return the complex arccosine
-* ``arctan``: return the complex arctangent
-* ``to_cartesian``: convert from polar form to Cartesian
+* ``exp(complex)``: return the complex exponent
+* ``log(complex)``: return the complex logarithm
+* ``pow(complex, complex)``: return the complex power
+* ``sqrt(complex)``: return the complex square root
+* ``sin(complex)``: return the complex sine
+* ``cos(complex)``: return the complex cosine
+* ``tan(complex)``: return the complex tangent
+* ``arcsin(complex)``: return the complex arcsine
+* ``arccos(complex)``: return the complex arccosine
+* ``arctan(complex)``: return the complex arctangent
+* ``to_cartesian(polar)``: convert from polar form to Cartesian
 
 All functions above return an item of the complex data type.
 
@@ -145,7 +145,7 @@ All functions above return an item of the real data type (a scalar quantity).
 
 All functions above return an item of the boolean data type (TRUE or FALSE).
 
-* ``to_polar``: convert the complex (Cartesian) to polar coordinates
+* ``to_polar(complex)``: convert the complex (Cartesian) to polar coordinates
 
 The function above returns a complex number in polar form.
 
@@ -165,23 +165,16 @@ The ``complexpack`` distribution includes the following files:
 +-----------------------+------------------------------------------------------+
 | /complexpack          | Top-level directory                                  |
 +-----------------------+------------------------------------------------------+
-| AUTHORS               | List of ``complexpack`` authors.                     |
-+-----------------------+------------------------------------------------------+
-| BUGS                  | Bug list.                                            |
-+-----------------------+------------------------------------------------------+
 | ChangeLog             | A log for code changes.                              |
 +-----------------------+------------------------------------------------------+
-| LICENSE               | The LGPL, version 3, governs ``complexpack``.        |
+| LICENSE               | The modified BSD license governs ``complexpack``     |
+|                       | since version 0.2.0.                                 |
 +-----------------------+------------------------------------------------------+
 | README.rst            | This file.                                           |
 +-----------------------+------------------------------------------------------+
 | README.html           | HTML version of README.rst.                          |
 +-----------------------+------------------------------------------------------+
 | README.pdf            | PDF version of README.rst.                           |
-+-----------------------+------------------------------------------------------+
-| THANKS                | Acknowledgements.                                    |
-+-----------------------+------------------------------------------------------+
-| TODO                  | A list of future enhancements.                       |
 +-----------------------+------------------------------------------------------+
 | VERSION               | Current version of the project sources.              |
 +-----------------------+------------------------------------------------------+
