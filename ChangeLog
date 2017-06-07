@@ -1,5 +1,9 @@
 ChangeLog starts here
 
+2017-06-07 Nikolaos Kavvadias  <nikolaos.kavvadias@gmail.com>
+  
+  * Release v0.2.1. Add arg (argument).
+
 2017-06-05 Nikolaos Kavvadias  <nikolaos.kavvadias@gmail.com>
   
   * Release v0.2.0. Add polar form, to_polar, to_cartesian, exp, log, pow, 

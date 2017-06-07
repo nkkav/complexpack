@@ -3,7 +3,7 @@
 -- Purpose : Complex arithmetic package
 -- Author  : Nikolaos Kavvadias (C) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 
 --                                  2016, 2017
--- Date    : 05-Jun-2017
+-- Date    : 07-Jun-2017
 -- Revision: 0.0.0 (02/10/09)
 --           Initial version. Based a code example present in the RASSP series 
 --           of VHDL lectures. Compared to the RASSP version, the following have 
@@ -20,6 +20,8 @@
 --           cos, tan, arcsin, arccos, arctan.
 --           Additions based on C implementations from "Basic Algorithms" of 
 --           Malcolm McLean.
+--           0.2.1 (07/06/17)
+--           Add arg (argument).
 --
 --------------------------------------------------------------------------------
 
@@ -66,6 +68,7 @@ package complexpack is
   function "/" (a, b : complex) return complex;
   function conjugate (a : complex) return complex;
   function magnitude (a : complex) return real;
+  function arg (a : complex) return real;
   function "abs" (a : complex) return real;
   function "<"  (a, b : complex) return boolean;  
   function ">"  (a, b : complex) return boolean;  
@@ -176,6 +179,15 @@ package body complexpack is
     t := sqrt(a(re)*a(re) + a(im)*a(im));
     return t;
   end magnitude;
+
+  -- Argument (or phase, theta)
+  -- Computed by atan2(y, x)
+  function arg (a : complex) return real is
+    variable t : real;
+  begin
+    t := arctan(a(im), a(re));
+    return t;
+  end arg;
 
   function "abs" (a: complex) return real is
   begin

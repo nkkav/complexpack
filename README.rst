@@ -16,11 +16,15 @@
 +-------------------+----------------------------------------------------------+
 | **Website**       | http://www.nkavvadias.com                                |
 +-------------------+----------------------------------------------------------+
-| **Release Date**  | 05 June 2017                                             |
+| **Release Date**  | 07 June 2017                                             |
 +-------------------+----------------------------------------------------------+
-| **Version**       | 0.2.0                                                    |
+| **Version**       | 0.2.1                                                    |
 +-------------------+----------------------------------------------------------+
 | **Rev. history**  |                                                          |
++-------------------+----------------------------------------------------------+
+|        **v0.2.1** | 2017-06-07                                               |
+|                   |                                                          |
+|                   | Add arg (argument).                                      |
 +-------------------+----------------------------------------------------------+
 |        **v0.2.0** | 2017-06-05                                               |
 |                   |                                                          |
@@ -130,8 +134,9 @@ All functions above return an item of the complex data type.
 
 * ``get_real(complex)``: get the real part of a complex number
 * ``get_imaginary(complex)``: get the imaginary part of a complex number
-* ``magnitude(complex)``: return the magnitude (distance of point 0,0) of 
-  the complex number
+* ``magnitude(complex)``: return the magnitude (distance from point 0,0) 
+  of the complex number
+* ``arg(complex)``: return the argument (phase) of the complex number
 * ``abs(complex)``: alias for ``magnitude``
 	
 All functions above return an item of the real data type (a scalar quantity).
