@@ -3,7 +3,7 @@
 -- Purpose : Complex arithmetic package
 -- Author  : Nikolaos Kavvadias (C) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 
 --                                  2016, 2017
--- Date    : 07-Jun-2017
+-- Date    : 10-Jun-2017
 -- Revision: 0.0.0 (02/10/09)
 --           Initial version. Based a code example present in the RASSP series 
 --           of VHDL lectures. Compared to the RASSP version, the following have 
@@ -22,6 +22,8 @@
 --           Malcolm McLean.
 --           0.2.1 (07/06/17)
 --           Add arg (argument).
+--           0.2.2 (10/06/17)
+--           Add complex mac.
 --
 --------------------------------------------------------------------------------
 
@@ -66,6 +68,7 @@ package complexpack is
   function "-" (a : complex) return complex;
   function "*" (a, b : complex) return complex;
   function "/" (a, b : complex) return complex;
+  function mac (a, b, c : complex) return complex;
   function conjugate (a : complex) return complex;
   function magnitude (a : complex) return real;
   function arg (a : complex) return real;
@@ -162,6 +165,17 @@ package body complexpack is
     t(im) := t(im) / i;
     return t;
   end "/";
+
+  -- a * b + c
+  function mac (a, b, c : complex) return complex is
+    variable t : complex;
+    variable u : complex;
+  begin
+    u := a * b;
+    t(re) := c(re) + u(re);
+    t(im) := c(im) + u(im);
+    return t;
+  end mac;
 
   function conjugate (a : complex) return complex is
     variable t : complex;
