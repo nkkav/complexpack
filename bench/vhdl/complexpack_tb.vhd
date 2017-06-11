@@ -35,13 +35,14 @@ begin
 
   -- Test the basic operators. 
   TEST_OPS: process
-    variable a, b, c: complex;
+    variable a, b, c, d: complex;
 	variable t, u: real;
 	variable lt, gt, le, ge, eq, ne: boolean;
     variable BufLine: line;
   begin
     a := to_complex(1.0, 2.0);
     b := to_complex(3.0, -5.0);
+    d := to_complex(-1.0, 4.0);
     wait for CLK_PERIOD;
     -- Test complex addition
     c := a + b;    
@@ -111,6 +112,27 @@ begin
     write(Bufline, string'(")"));
     writeline(ResultsFile, Bufline);
     wait for CLK_PERIOD;
+    -- Test complex multiply-and-accumulate
+    c := mac(a, b, d);    
+    write(Bufline, string'("mac ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") , ("));            
+    write(Bufline, b(re));
+    write(Bufline, string'(", "));
+    write(Bufline, b(im));
+    write(Bufline, string'(") , ("));            
+    write(Bufline, d(re));
+    write(Bufline, string'(", "));
+    write(Bufline, d(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
     -- Test conjugate
     c := conjugate(a);
     write(Bufline, string'("conjugate("));
@@ -161,6 +183,16 @@ begin
     write(Bufline, string'(")"));
     writeline(ResultsFile, Bufline);
     wait for CLK_PERIOD;	
+    -- Test arg
+    t := arg(a);
+    write(Bufline, string'("arg("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") = "));            
+    write(Bufline, t);
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
 	-- Test less than
     lt := a < b;    
 	gt := a > b;
@@ -240,6 +272,139 @@ begin
     write(Bufline, string'(") = "));
     write(Bufline, ne);
     writeline(ResultsFile, Bufline);	
+    -- Test exp
+    c := exp(a);    
+    write(Bufline, string'("exp ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
+    -- Test log
+    c := log(a);    
+    write(Bufline, string'("log ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
+    -- Test pow
+    c := pow(a, b);    
+    write(Bufline, string'("pow ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") / ("));            
+    write(Bufline, b(re));
+    write(Bufline, string'(", "));
+    write(Bufline, b(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    -- Test sqrt
+    c := sqrt(a);    
+    write(Bufline, string'("sqrt ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
+    -- Test sin
+    c := sin(a);    
+    write(Bufline, string'("sin ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
+    -- Test cos
+    c := cos(a);    
+    write(Bufline, string'("cos ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
+    -- Test tan
+    c := tan(a);    
+    write(Bufline, string'("tan ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
+    -- Test arcsin
+    c := arcsin(a);    
+    write(Bufline, string'("arcsin ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
+    -- Test arccos
+    c := arccos(a);    
+    write(Bufline, string'("arccos ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
+    -- Test arctan
+    c := arctan(a);    
+    write(Bufline, string'("arctan ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
   end process TEST_OPS;
   
 end tb_arch;
