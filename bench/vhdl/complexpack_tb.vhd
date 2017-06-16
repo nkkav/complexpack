@@ -133,6 +133,19 @@ begin
     write(Bufline, string'(")"));
     writeline(ResultsFile, Bufline);
     wait for CLK_PERIOD;
+    -- Test reciprocal
+    c := reciprocal(a);    
+    write(Bufline, string'("reciprocal ("));
+    write(Bufline, a(re));
+    write(Bufline, string'(", "));
+    write(Bufline, a(im));
+    write(Bufline, string'(") = ("));
+    write(Bufline, c(re));
+    write(Bufline, string'(", "));
+    write(Bufline, c(im));
+    write(Bufline, string'(")"));
+    writeline(ResultsFile, Bufline);
+    wait for CLK_PERIOD;
     -- Test conjugate
     c := conjugate(a);
     write(Bufline, string'("conjugate("));

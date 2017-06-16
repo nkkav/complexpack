@@ -16,11 +16,15 @@
 +-------------------+----------------------------------------------------------+
 | **Website**       | http://www.nkavvadias.com                                |
 +-------------------+----------------------------------------------------------+
-| **Release Date**  | 10 June 2017                                             |
+| **Release Date**  | 16 June 2017                                             |
 +-------------------+----------------------------------------------------------+
-| **Version**       | 0.2.2                                                    |
+| **Version**       | 0.2.3                                                    |
 +-------------------+----------------------------------------------------------+
 | **Rev. history**  |                                                          |
++-------------------+----------------------------------------------------------+
+|        **v0.2.3** | 2017-06-16                                               |
+|                   |                                                          |
+|                   | Add complex reciprocal.                                  |
 +-------------------+----------------------------------------------------------+
 |        **v0.2.2** | 2017-06-10                                               |
 |                   |                                                          |
@@ -120,6 +124,8 @@ by the ``complexpack`` package.
 * ``-``: negate a complex number
 * ``*``: multiply two complex numbers
 * ``/``: divide two complex numbers
+* ``mac``: multiply-and accumulate (``a * b + c``)
+* ``reciprocal``: the reciprocal of a complex number
 * ``conjugate(complex)``: return the conjugate of the given complex 
   number
 * ``exp(complex)``: return the complex exponent
