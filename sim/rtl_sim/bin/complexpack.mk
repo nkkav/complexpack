@@ -1,7 +1,7 @@
 GHDL=ghdl
 GHDLFLAGS=--ieee=standard -fexplicit --workdir=work
-GHDLRUNFLAGS=--wave=complexpack.ghw --stop-time=380ns
-#GHDLRUNFLAGS=--vcd=complexpack.vcd --stop-time=380ns
+GHDLRUNFLAGS=--wave=complexpack.ghw --stop-time=290ns
+#GHDLRUNFLAGS=--vcd=complexpack.vcd --stop-time=290ns
 
 # Default target : run
 all : run
