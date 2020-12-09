@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
 <title>complexpack user manual</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
@@ -36,6 +36,14 @@ table.borderless td, table.borderless th {
 
 .hidden {
   display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
 
 a.toc-backref {
   text-decoration: none ;
@@ -161,18 +169,23 @@ h2.subtitle {
 hr.docutils {
   width: 75% }
 
-img.align-left, .figure.align-left, object.align-left {
+img.align-left, .figure.align-left, object.align-left, table.align-left {
   clear: left ;
   float: left ;
   margin-right: 1em }
 
-img.align-right, .figure.align-right, object.align-right {
+img.align-right, .figure.align-right, object.align-right, table.align-right {
   clear: right ;
   float: right ;
   margin-left: 1em }
 
 img.align-center, .figure.align-center, object.align-center {
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
   margin-left: auto;
   margin-right: auto;
 }
@@ -193,6 +206,15 @@ div.align-right {
 
 /* div.align-center * { */
 /*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
 
 ol.simple, ul.simple {
   margin-bottom: 1em }
@@ -352,8 +374,7 @@ ul.auto-toc {
 <td>complexpack (VHDL complex arithmetic package).</td>
 </tr>
 <tr><td><strong>Author</strong></td>
-<td>Nikolaos Kavvadias 2009, 2010, 2011, 2012, 2013, 2014,
-2015, 2016, 2017</td>
+<td>Nikolaos Kavvadias 2009-2020</td>
 </tr>
 <tr><td><strong>Contact</strong></td>
 <td><a class="reference external" href="mailto:nikolaos.kavvadias&#64;gmail.com">nikolaos.kavvadias&#64;gmail.com</a></td>
@@ -362,13 +383,18 @@ ul.auto-toc {
 <td><a class="reference external" href="http://www.nkavvadias.com">http://www.nkavvadias.com</a></td>
 </tr>
 <tr><td><strong>Release Date</strong></td>
-<td>16 June 2017</td>
+<td>09 December 2020</td>
 </tr>
 <tr><td><strong>Version</strong></td>
-<td>0.2.3</td>
+<td>0.2.4</td>
 </tr>
 <tr><td><strong>Rev. history</strong></td>
 <td>&nbsp;</td>
+</tr>
+<tr><td><strong>v0.2.4</strong></td>
+<td><p class="first">2020-12-09</p>
+<p class="last">Self-checking test.</p>
+</td>
 </tr>
 <tr><td><strong>v0.2.3</strong></td>
 <td><p class="first">2017-06-16</p>
@@ -635,7 +661,7 @@ comparison.</p>
 </li>
 <li><p class="first">GHDL simulator (<a class="reference external" href="http://ghdl.free.fr">http://ghdl.free.fr</a>)</p>
 <p>Provides the &quot;ghdl&quot; executable and corresponding simulation environment.
-Versions throughtout 0.26 to 0.33 have been used for testing.</p>
+Versions 0.26 to 0.37 have been used for testing.</p>
 </li>
 </ul>
 </div>

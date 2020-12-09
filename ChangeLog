@@ -1,5 +1,9 @@
 ChangeLog starts here
 
+2020-12-09 Nikolaos Kavvadias  <nikolaos.kavvadias@gmail.com>
+  
+  * Release v0.2.4. Self-checking test.
+
 2017-06-10 Nikolaos Kavvadias  <nikolaos.kavvadias@gmail.com>
   
   * Release v0.2.2. Add complex mac.

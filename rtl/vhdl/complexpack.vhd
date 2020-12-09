@@ -1,32 +1,30 @@
 --------------------------------------------------------------------------------
 -- Filename: complexpack.vhd
 -- Purpose : Complex arithmetic package
--- Author  : Nikolaos Kavvadias (C) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 
---                                  2016, 2017
+-- Author  : Nikolaos Kavvadias (C) 2009-2020
 -- Date    : 16-Jun-2017
--- Revision: 0.0.0 (02/10/09)
---           Initial version. Based a code example present in the RASSP series 
---           of VHDL lectures. Compared to the RASSP version, the following have 
---           beed added: conjugate function.
---           0.1.0 (03/03/14)
---           Added get_real, get_imaginary, magnitude, and operators: lt, gt, 
---           le, ge, eq, ne.
---           New library dependency: IEEE.math_real.
---           0.1.1 (04/03/14)
---           Added support for the "abs" and the negation ("-") operators as 
---           those are needed by the complexarrpack package project.
+-- Revision: 0.2.3 (16/06/17)
+--           Add complex reciprocal.
+--           0.2.2 (10/06/17)
+--           Add complex mac.
+--           0.2.1 (07/06/17)
+--           Add arg (argument).
 --           0.2.0 (05/06/17)
 --           Add polar form, to_polar, to_cartesian, exp, log, sqrt, sin, 
 --           cos, tan, arcsin, arccos, arctan.
 --           Additions based on C implementations from "Basic Algorithms" of 
 --           Malcolm McLean.
---           0.2.1 (07/06/17)
---           Add arg (argument).
---           0.2.2 (10/06/17)
---           Add complex mac.
---           0.2.3 (16/06/17)
---           Add complex reciprocal.
---
+--           0.1.1 (04/03/14)
+--           Added support for the "abs" and the negation ("-") operators as 
+--           those are needed by the complexarrpack package project.
+--           0.1.0 (03/03/14)
+--           Added get_real, get_imaginary, magnitude, and operators: lt, gt, 
+--           le, ge, eq, ne.
+--           New library dependency: IEEE.math_real.
+--           0.0.0 (02/10/09)
+--           Initial version. Based on a code example present in the RASSP series
+--           of VHDL lectures. Compared to the RASSP version, the following have 
+--           beed added: conjugate function.
 --------------------------------------------------------------------------------
 
 library IEEE;
