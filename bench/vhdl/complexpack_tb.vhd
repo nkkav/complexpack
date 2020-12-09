@@ -121,7 +121,7 @@ begin
     wait for CLK_PERIOD;
     -- Test get_real, get_imaginary
     t := get_real(a);
-	u := get_imaginary(a);
+    u := get_imaginary(a);
     write(BufLine, string'("real"));
     print_complex(a, BufLine);
     write(BufLine, string'(" = "));        
@@ -135,7 +135,7 @@ begin
     wait for CLK_PERIOD;
     -- Test magnitude
     t := magnitude(a);
-	u := magnitude(b);
+    u := magnitude(b);
     write(BufLine, string'("magnitude"));
     print_complex(a, BufLine);
     write(BufLine, string'(" = "));            
@@ -156,14 +156,14 @@ begin
     write(BufLine, t);
     writeline(ResultsFile, BufLine);
     wait for CLK_PERIOD;
-	-- Test less than
+    -- Test less than
     lt := a < b;    
-	gt := a > b;
-	le := a <= b;
-	ge := a >= b;
-	eq := a = b;
-	ne := a /= b;
-	-- lt
+    gt := a > b;
+    le := a <= b;
+    ge := a >= b;
+    eq := a = b;
+    ne := a /= b;
+    -- lt
     print_complex(a, BufLine);
     write(BufLine, string'(" < "));            
     print_complex(b, BufLine);
@@ -171,7 +171,7 @@ begin
     write(BufLine, lt);
     writeline(ResultsFile, BufLine);	
     wait for CLK_PERIOD;
-	-- gt
+    -- gt
     print_complex(a, BufLine);
     write(BufLine, string'(" + "));            
     print_complex(b, BufLine);
@@ -179,7 +179,7 @@ begin
     write(BufLine, gt);
     writeline(ResultsFile, BufLine);	
     wait for CLK_PERIOD;
-	-- le
+    -- le
     print_complex(a, BufLine);
     write(BufLine, string'(" <= "));            
     print_complex(b, BufLine);
@@ -187,7 +187,7 @@ begin
     write(BufLine, le);
     writeline(ResultsFile, BufLine);
     wait for CLK_PERIOD;
-	-- ge
+    -- ge
     print_complex(a, BufLine);
     write(BufLine, string'(" >= "));            
     print_complex(b, BufLine);
@@ -195,7 +195,7 @@ begin
     write(BufLine, ge);
     writeline(ResultsFile, BufLine);	
     wait for CLK_PERIOD;
-	-- eq
+    -- eq
     print_complex(a, BufLine);
     write(BufLine, string'(" = "));            
     print_complex(b, BufLine);
@@ -203,7 +203,7 @@ begin
     write(BufLine, eq);
     writeline(ResultsFile, BufLine);	
     wait for CLK_PERIOD;
-	-- ne
+    -- ne
     print_complex(a, BufLine);
     write(BufLine, string'(" /= "));            
     print_complex(b, BufLine);
