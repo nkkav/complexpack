@@ -1,7 +1,6 @@
 GHDL=ghdl
 GHDLFLAGS=--ieee=standard -fexplicit --workdir=work
-GHDLRUNFLAGS=--wave=complexpack.ghw --stop-time=290ns
-#GHDLRUNFLAGS=--vcd=complexpack.vcd --stop-time=290ns
+GHDLRUNFLAGS=--stop-time=290ns
 
 # Default target : run
 all : run
@@ -10,7 +9,7 @@ all : run
 run: init
 	$(GHDL) --elab-run $(GHDLFLAGS) complexpack_tb $(GHDLRUNFLAGS)
 
-# Targets to analyze libraries
+# Target to analyze libraries
 init:
 	mkdir -p work
 	$(GHDL) -a $(GHDLFLAGS) ../../../rtl/vhdl/complexpack.vhd
